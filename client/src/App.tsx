@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/get_location_names");
+        const response = await axios.get("https://houseprice.rithkchaudharytechnologies.xyz/get_location_names");
         setLocations(response.data.locations);
       } catch (error) {
         console.error("Error fetching locations:", error);
@@ -28,7 +28,7 @@ function App() {
   const handleEstimatePrice = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post("http://127.0.0.1:5000/predict_home_price", {
+      const response = await axios.post("https://houseprice.rithkchaudharytechnologies.xyz/predict_home_price", {
         total_sqft: sqft,   
         location: location,
         bhk: bhk,
